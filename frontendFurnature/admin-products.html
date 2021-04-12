@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link
+            href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css"
+            rel="stylesheet"
+            integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1"
+            crossorigin="anonymous"
+        >
+        <link
+            rel="stylesheet"
+            href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+            integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p"
+            crossorigin="anonymous"
+        >
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.0/font/bootstrap-icons.css">
+        <script src="../js/jquery.js"></script>
+        <script src="/js/jbvalidator.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js" integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous"></script>
+        <link rel="stylesheet" href="/css/css.css">
+        <link rel="stylesheet" href="/css/about.css">
+        <link rel="stylesheet" href="/css/cart.css">
+        <link rel="stylesheet" href="/css/chat.css">
+        <link rel="icon" type="image/png" sizes="16x16" href="/images/7e364cdea04b90aec0c43b20c8d722f3.ico/favicon-16x16.png">
+        <title>furnature</title>
+    </head>
+    <body id="body">
+        <div id="nav"></div>
+        <div id="chatmodaldiv">
+            <button id="chatModalButtonOpen" class="btn chatbtn">
+                <i class="far fa-comment fa-3x chat"></i>
+            </button>
+        </div>
+        <div id="actualModal"></div>
+        <div class="page-container container">
+            <div class="row">
+                <div class="list-group adminlist col-lg-2 col-md-12">
+                    <ul>
+                        <li id="adminProducts">
+                            <a href="admin-products.html">PRODUCTS</a>
+                        </li>
+                        <li id="adminOrders">
+                            <a href="admin-orders.html">ORDERS</a>
+                        </li >
+                        <li id="adminUsers">
+                            <a href="admin-users.html">USERS</a>
+                        </li>
+                        <br>
+                        <li id="adminMaterials">
+                            <a href="admin-other.html">Materials</a>
+                        </li>
+                        <li id="adminCategories">
+                            <a href="admin-other.html">Categories</a>
+                        </li>
+                        <li id="adminStyles">
+                            <a href="admin-other.html">Styles</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="adminProducts col-lg-10 col-md-12">
+                        <div class="row"> 
+                      <!-- <div class="adminAddProductsbtndiv col-lg-12 col-md-6 col-md-3">-->
+                            <button type="button" class="btn btn-default adminAddProductsbtn">
+                                Click to Add New Product
+                            </button>
+                      
+                    </div>
+                    <div class="adminAddProductsFormdiv">
+                        <form
+                            id="adminAddProductsForm"
+                            role="form"
+                            method="POST"
+                            enctype="multipart/form-data"
+                            action="http://localhost:8080/api/products/admin/createProduct"
+                            class="row g-3 needs-validation validatorServerSide"
+                            novalidate
+                            
+                        >
+                           
+                            <input type="hidden" name="id" id="id" value="0"></input>
+                            <div class="col-md-6">
+                                <label for="name" class="adminAddProductsFormlabel">Name</label>
+                                <input
+                                    type="text"
+                                    class="form-control adminInput"
+                                    id="name"
+                                    name="name"
+                                    placeholder="Product name"
+                                    data-v-min-length="2"
+                                    required
+                                >
+                            </div>
+                            <div class="col-md-6">
+                                <label for="description" class="adminAddProductsFormlabel">Description</label>
+                                <input
+                                    type="text"
+                                    class="form-control adminInput"
+                                    placeholder="Description"
+                                    id="description"
+                                    name="description"
+                                    data-v-min-length="2"
+                                    required
+                                >
+                            </div>
+                            <div class="col-md-6">
+                                <label for="style" class="adminAddProductsFormlabel">Style</label>
+                                <select
+                                    name="style"
+                                    id="style"
+                                    class="form-select selectStyle selectSC"
+                                    data-v-min-select="1"
+                                    required
+                                  
+                                >
+                                    <option id="styleEmpty" value=""> Select Style</option>
+                                </select>
+                            </div>
+                            <div class="col-md-6">
+                                <label for="category" class="adminAddProductsFormlabel">Category</label>
+                                <select
+                                    name="category"
+                                    id="category"
+                                    class="form-select selectCategory selectSC"
+                                    data-v-min-select="1"
+                                    required
+                                >
+                                    <option value=""> Select Category</option>
+                                </select>
+                            </div>
+                            <div class="col-md-6">
+                                <label for="price" class="adminAddProductsFormlabel">Price</label>
+                                <input
+                                    type="number"
+                                    step="0.10"
+                                    class="form-control adminInput"
+                                    id="price"
+                                    placeholder="Price"
+                                    name="price"
+                                    required
+                                >
+                            </div>
+                            <div class="col-md-6">
+                                <label for="discount" class="adminAddProductsFormlabel">Discount</label>
+                                <input
+                                    type="number"
+                                    step="0.10"
+                                    class="form-control adminInput"
+                                    id="discount"
+                                    placeholder="discount in euros"
+                                    name="discount"
+                                    required
+                                >
+                            </div>
+                            <div class="col-md-6">
+                                <label for="sku" class="adminAddProductsFormlabel">Sku</label>
+                                <input
+                                    type="text"
+                                    class="form-control adminInput"
+                                    placeholder="Sku"
+                                    id="sku"
+                                    name="sku"
+                                    data-v-min-length="2"
+                                    data-v-max-length="10"
+                                    required
+                                >
+                            </div>
+                            <div class="col-md-6">
+                                <label for="stock" class="adminAddProductsFormlabel">Stock</label>
+                                <input
+                                    type="number"
+                                    step="1"
+                                    class="form-control adminInput"
+                                    id="stock"
+                                    placeholder="Stock Quantity"
+                                    name="stock"
+                                    required
+                                >
+                            </div>
+                            <div class="container materialsList">
+                                <ul class="list-group list-group-horizontal materialsUl">
+                                    <li class="list-group-item">Materials:</li>
+                                </ul>
+                            </div>
+                            <div class="col-md-12 col-md-6 checkbox-group materialscheckdiv" data-checkbox-group data-v-min-select="1" data-v-required>
+                                <p class="materialscheckp">Select from the Following materials:</p>
+                                <label class="checkbox inline materialscheck">
+                                    <input type="checkbox"  name="materials" value="200"> Wood
+                                  </label>
+                                
+                                <label class="checkbox-inline materialscheck">
+                                    <input
+                                        type="checkbox"
+                                        name="materials"
+                                        value="202"
+                                    >
+                                    Steal
+                                </label>
+                                <label class="checkbox-inline materialscheck">
+                                    <input
+                                        type="checkbox"
+                                        name="materials"
+                                        value="201"
+                                    >
+                                    Fabric
+                                </label>
+                                <label class="checkbox-inline materialscheck">
+                                    <input
+                                        type="checkbox"
+                                        name="materials"
+                                        value="204"
+                                    >
+                                    Glass
+                                </label>
+                                <label class="checkbox-inline materialscheck">
+                                    <input
+                                        type="checkbox"
+                                        name="materials"
+                                        value="206"
+                                    >
+                                    Leather
+                                </label>
+                                <label class="checkbox-inline materialscheck">
+                                    <input
+                                        type="checkbox"
+                                        name="materials"
+                                        value="203"
+                                    >
+                                    PVC
+                                </label>
+                                <label class="checkbox-inline materialscheck">
+                                    <input
+                                        type="checkbox"
+                                        name="materials"
+                                        value="205"
+                                    >
+                                    Rope
+                                </label>
+                            </div>
+                            <div class="checkboxErrormsg">Please select at least one material</div>
+                            <div class="col-md-12 productFromImg">
+                                <label for="fileinput" class="form-label materialscheckp">Upload Photo</label>
+                                <input
+                                    class="form-control"
+                                    type="file"
+                                    name="file"
+                                    id="fileinput"
+                                   
+                                >
+                            </div>
+                            <div class="col-12">
+                                <button class="btn btn-default cancelbtn" type="button">Back</button>
+                                <button class="btn btn-default submitAdminProductbtn" id="productbtn" type="submit">Add Product</button>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="col-md-12 form-group adminProductsSelectdiv">
+                        <select class="form-select" id="adminProductsSelect">
+                            <option value="0" class="text-center" id="select">Click to Update Product Information</option>
+                        </select>
+                        <div class="filledProductsForm"></div>
+                    </div>
+                    <div class="adminProductsTablediv"></div>
+                </div>
+            </div>
+        </div>
+        <div id="footer"></div>
+        <script src="/js/jquery.js"></script>
+        <script src="/js/jbvalidator.js"></script>
+        <script>  $("#footer").load("footer.html");</script>
+        <script src="/js/sockjs.min.js"></script>
+        <script src="/js/stomp.min.js"></script>
+        <script src="/js/chat.js"></script>
+        <script src="/js/admin.js"></script>
+        <script src="/js/cart.js"></script>
+        <script src="/js/js.js"></script>
+        <script src="/js/signInsignUp.js"></script>
+        <script src="/js/navloader.js"></script>
+    </body>
+</html>

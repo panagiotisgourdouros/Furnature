@@ -1,0 +1,48 @@
+<div
+  id="chatModal"
+  class="modal fade"
+  tabindex="-1"
+  role="dialog"
+  aria-labelledby="chatModalLabel"
+  aria-hidden="true"
+>
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="modal-title">Public Chat Room</h4>
+        <button
+          id="chatModalButtonClose"
+          type="button"
+          class="btn btn-default"
+        >
+          Leave Chat
+        </button>
+      </div>
+      <div class="connecting">Trying to connect...</div>
+
+      <div class="modal-body chatModalBody">
+        <div id="chat-page">
+          <div class="chat-container">
+            <ul id="messageArea"></ul>
+          </div>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <form id="messageFormChat" name="messageFormChat">
+          <div class="input-group clearfix">
+            <input
+              type="text"
+              id="messageChat"
+              placeholder="Type a message..."
+              autocomplete="off"
+              class="form-control"
+            />
+            <button id="messageFormSend" type="button" class="btn btn-default sendmsgbtn">
+              Send
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,192 @@
+<nav
+  class="navbar navbar-expand-lg bg-light navbar-light navcustom"
+>
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-bs-toggle="collapse"
+        data-bs-target="#navbarNavDarkDropdown"
+        aria-controls="navbarNavDarkDropdown"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <a class="navbar-brand brand" href="#"><img src="/images/brandname.png" alt="" id="brand"></a>
+    </div>
+
+    <div class="collapse navbar-collapse" id="navbarNavDarkDropdown">
+      <ul class="nav navbar-nav justify-content-around w-100">
+        <li class="nav-item">
+          <a class="nav-link a index" href="" id="home">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link a index" id="aboutlink" href="about.html"
+            >Who We Are</a
+          >
+        </li>
+        <li class="nav-item">
+          <a class="nav-link a index" href="contact.html">Contact Us</a>
+        </li>
+        <li class="nav-item dropdown shop">
+          <a
+            class="nav-link dropdown-toggle"
+            href="#"
+            id="navbarDarkDropdownMenuLink"
+            role="button"
+            data-bs-toggle="dropdown"
+            aria-expanded="false"
+            >Shop</a
+          >
+
+          <ul
+            class="dropdown-menu dropdown-menu-light links"
+            aria-labelledby="navbarDarkDropdownMenuLink"
+            id="shop-by"
+          >
+            <li>
+              <a
+                class="dropdown-item a index"
+                href="products-by-category.html"
+                data-id="categories"
+              >
+                By Category</a
+              >
+            </li>
+            <li>
+              <a
+                class="dropdown-item a index"
+                href="products-by-style.html"
+                data-id="styles"
+              >
+                By Decor Style</a
+              >
+            </li>
+            <li>
+              <a
+                class="dropdown-item a index"
+                href="products-by-material.html"
+                data-id="materials"
+              >
+                By Material</a
+              >
+            </li>
+            <li>
+              <a
+                class="dropdown-item a index"
+                href="products.html"
+                id="allproducts"
+              >
+                Show All Products</a
+              >
+            </li>
+          </ul>
+        </li>
+
+        <li class="nav-item" id="login">
+          <a class="nav-link a index" href="login-form.html" id="loginform"
+            >Login/SignUp</a
+          >
+        </li>
+
+        <li class="nav-item dropdown" id="user">
+          <a
+            class="nav-link dropdown-toggle"
+            href="#"
+            role="button"
+            data-bs-toggle="dropdown"
+            aria-expanded="false"
+            id="myAccount"
+          ></a>
+          <ul
+            class="dropdown-menu dropdown-menu-light"
+            aria-labelledby="navbarDarkDropdownMenuLink"
+          >
+            <li>
+              <a
+                class="dropdown-item index userdropdown"
+                href="profile.html"
+                id="profile"
+              >
+                Personal Info</a
+              >
+            </li>
+            <li>
+              <a
+                class="dropdown-item index userdropdown"
+                href="addresses.html"
+                id="addressbook"
+              >
+                Address Book</a
+              >
+            </li>
+            <li>
+              <a class="dropdown-item userdropdown orderHistory" href="#">
+                Order History</a
+              >
+            </li>
+            <li>
+              <a class="dropdown-item" href="#" id="logout">Log Out</a>
+            </li>
+          </ul>
+        </li>
+        <li class="nav-item">
+          <a href="#" id="cart-icon" class="nav-link a">
+            <i class="bi bi-handbag"></i> <span id="cart-quantity">0</span></a
+          >
+        </li>
+        <li class="nav-item" id="switchtoadmin">
+          <a class="nav-link a adminlink" href="admin-dashboard.html"
+            >ADMINISTRATION
+          </a>
+        </li>
+        <li class="nav-item" id="switchtocust">
+          <a class="nav-link a adminlink" href="dashboard.html"
+            >CUSTOMER VIEW</a
+          >
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<div
+  class="modal fade"
+  id="cart"
+  role="dialog"
+  data-keyboard="false"
+  data-backdrop="static"
+>
+  <div class="modal-dialog">
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="modal-title">My Shopping bag</h4>
+      </div>
+      <div class="modal-body">
+        <div id="display"></div>
+      </div>
+        <div class="modal-footer" id="modalfooter">
+          <button
+            type="button"
+            class="btn"
+            data-dismiss="modal"
+            id="close-modal"
+          >
+            Close
+          </button>
+          <button
+            type="button"
+            class="btn"
+            data-dismiss="modal"
+            id="checkout"
+          >
+            Check out
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+

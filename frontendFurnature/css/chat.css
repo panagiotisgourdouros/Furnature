@@ -1,0 +1,85 @@
+#chat-page .event-message p {
+  color: #777;
+  font-size: 14px;
+  word-wrap: break-word;
+}
+
+#chat-page .chat-message {
+  padding-left: 68px;
+  position: relative;
+}
+#messageArea{
+  list-style-type: none;
+}
+#chat-page .chat-message i {
+  position: absolute;
+  width: 42px;
+  height: 42px;
+  overflow: hidden;
+  left: 10px;
+  display: inline-block;
+  vertical-align: middle;
+  font-size: 18px;
+  line-height: 42px;
+  color: #fff;
+  text-align: center;
+  border-radius: 50%;
+  font-style: normal;
+  text-transform: uppercase;
+}
+/* to username */
+#chat-page .chat-message span { 
+  color: #333;
+  font-weight: 600;
+}
+/* to message */
+#chat-page .chat-message p {
+  color: #43464b;
+}
+
+
+.connecting {  
+  text-align: center;
+  color: white;
+  position: relative;  
+  width: 100%;
+  background-color: rgb(11, 94, 122);
+}
+
+.chatModalBody{  
+  height: 45vh;
+  overflow-y: auto;
+}
+
+#messageFormChat{  
+  width: 100%;
+}
+
+#chatModalButtonClose{
+  background-color: rgb(241, 46, 105);
+  color:white;
+
+}
+.sendmsgbtn{
+  background-color:rgb(11, 94, 122);
+  color:white;
+}
+#messageChat{
+  /* display: block;
+  position: relative;
+  width: 20px; */
+  right: 10px;
+  border-radius: 6px;
+}
+#messageFormSend{
+  border-radius: 6px;
+}
+#actualModal{
+  
+  position: relative;
+  
+}
+#chatModal {
+  word-wrap: break-word;
+  border-radius: 7px;
+}

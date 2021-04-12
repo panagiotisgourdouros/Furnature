@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link
+            href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css"
+            rel="stylesheet"
+            integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1"
+            crossorigin="anonymous"
+        >
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.0/font/bootstrap-icons.css">
+        <link rel="stylesheet" href="/css/css.css">
+        <link rel="stylesheet" href="/css/cart.css">
+        <link rel="stylesheet" href="/css/chat.css">
+        <script src="../js/jquery.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js" integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous"></script>
+        <script src="https://kit.fontawesome.com/0191479dd7.js" crossorigin="anonymous"></script>
+        <link rel="icon" type="image/png" sizes="16x16" href="/images/7e364cdea04b90aec0c43b20c8d722f3.ico/favicon-16x16.png">
+        <title>furnature</title>
+    </head>
+    <body id="body">
+        <div id="nav"></div>
+ 
+        <div id="chatmodaldiv">
+            <button id="chatModalButtonOpen" class="btn chatbtn">
+                <i class="far fa-comment fa-3x chat"></i>
+            </button>
+        </div>
+        <div id="actualModal"></div>
+        <div class="page-container">
+            <div class="content-wrap">
+                <div id="result"></div>
+                <div class="container-fluid form">
+                    <div class="container-fluid inside">
+                        <form role="form" class="row g-3" id="loginform">
+                            <div class="col-12">
+                                <div class="form-outline">
+                                    <label for="username" class="form-label">Username</label>
+                                    <div class="input-group mb-3">
+                                        <div class="input-group-prepend form-outline">
+                                            <span class="input-group-text">
+                                                <i class="bi bi-person-fill"></i>
+                                            </span>
+                                        </div>
+                                        <input
+                                            type="text"
+                                            class="form-control rounded-right"
+                                            id="username"
+                                            name="username"
+                                            required
+                                        >
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-12">
+                                <div class="form-outline">
+                                    <label for="password" class="form-label">Password</label>
+                                    <div class="input-group mb-3">
+                                        <div class="input-group-prepend form-outline">
+                                            <span class="input-group-text" id="inputGroupPrepend">
+                                                <i class="bi bi-eye eye"></i>
+                                            </span>
+                                        </div>
+                                        <input
+                                            type="password"
+                                            class="form-control rounded-right"
+                                            id="password"
+                                            name="password"
+                                            aria-describedby="inputGroupPrepend"
+                                            required
+                                        >
+                                    </div>
+                                </div>
+                            </div>
+                            <div id="incorectUsernamePass"></div>
+                            <div class="col-12">
+                                <div class="form-outline">
+                                    <button class="btn submit" type="submit">Login</button>
+                                </div>
+                            </div>
+                        </form>
+                        <div id="links">
+                            <a
+                                href="forgot-password-form.html"
+                                type="button"
+                                class="btn btn-link font-weight-lighter small text-decoration-none text-center text-secondary"
+                                role="button"
+                            >Forgot your Password?</a>
+                            <br>
+                            <a
+                                href="registration-form.html"
+                                type="button"
+                                class="btn btn-link text-decoration-none text-center register"
+                                role="button"
+                            >Dont Have an Account? Register</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="footer"></div>
+        <script src="/js/jquery.js"></script>
+        <script src="/js/jbvalidator.js"></script>
+        <script>  $("#footer").load("footer.html");</script>
+        <script>
+        $(function() {
+
+            let validator = $("form.needs-validation").jbvalidator({
+                errorMessage: true,
+                successClass: true,
+            });
+
+            validator.validator.custom = function(el, event) {
+                if (
+                    $(el).is("[name=password]") &&
+                    ($(el).val().length < 8 ||
+                        $(el).val() == $(el).val().toLowerCase())
+                ) {
+                    return "Password should contain at least 8 characters and 1 Uppercase Letter";
+                }
+            };
+        });
+        </script>
+      
+      <script>  $("#footer").load("footer.html");</script>
+        <script src="../js/sockjs.min.js"></script>
+        <script src="../js/stomp.min.js"></script>
+        <script src="../js/chat.js"></script>
+        <script src="../js/js.js"></script>
+        <script src="../js/signInsignUp.js"></script>
+        <script src="../js/navloader.js"></script>
+        <script src="../js/cart.js"></script>
+    </html>
